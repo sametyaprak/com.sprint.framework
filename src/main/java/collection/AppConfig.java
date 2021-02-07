@@ -9,7 +9,12 @@ import java.util.*;
 @Configuration
 public class AppConfig {
 
-    @Bean
+
+    private void testConnection(){
+        System.out.println("this controls connection");
+    }
+
+    @Bean(initMethod = "testConnection")
     public DBConnection dbconnection() {
         DBConnection dbConnection = new DBConnection();
         List<String> mytestList = Arrays.asList("1","2","3");
@@ -25,11 +30,8 @@ public class AppConfig {
         dbConnection.setProps(properties);
         dbConnection.setUsername("user");
         dbConnection.setPassword("passs");
-
         dbConnection.openConnection();
         dbConnection.closeConnection();
-
-
         return dbConnection;
     }
 

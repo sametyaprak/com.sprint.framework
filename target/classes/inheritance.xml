@@ -10,10 +10,25 @@
    <bean id="database" class="inheritance.Database" abstract="true">
        <property name="username" value="samet"/>
        <property name="password" value="samet123"/>
+       <property name="properties">
+           <list>
+               <value>first property</value>
+               <value>second property</value>
+               <value>third property</value>
+               <value>last property</value>
+           </list>
+       </property>
    </bean>
 
     <bean id="oracleDatabase" class="inheritance.Database" parent="database">
         <property name="url" value="oracle.database"/>
+        <property name="properties">
+            <list merge="true">
+                <value>oracle 1</value>
+                <value>oracle 2</value>
+                <value>oracle 3</value>
+            </list>
+        </property>
     </bean>
     <bean id="mysqlDatabase" class="inheritance.Database" parent="database">
         <property name="url" value="mysqlDatabaseUrl"/>

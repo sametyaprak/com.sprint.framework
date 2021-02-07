@@ -14,6 +14,11 @@ public class DBConnection {
     private Map<String,String> myMap;
     private Properties props;
 
+
+    private void testConnection(){
+        System.out.println("this controls connection");
+    }
+
     public void openConnection() {
         System.out.println("open connection");
         System.out.println("username: " + username);
