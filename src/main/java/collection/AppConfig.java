@@ -14,7 +14,7 @@ public class AppConfig {
         System.out.println("this controls connection");
     }
 
-    @Bean(initMethod = "testConnection")
+    @Bean(initMethod = "testConnection", destroyMethod = "closeConnection")
     public DBConnection dbconnection() {
         DBConnection dbConnection = new DBConnection();
         List<String> mytestList = Arrays.asList("1","2","3");
@@ -31,7 +31,7 @@ public class AppConfig {
         dbConnection.setUsername("user");
         dbConnection.setPassword("passs");
         dbConnection.openConnection();
-        dbConnection.closeConnection();
+
         return dbConnection;
     }
 

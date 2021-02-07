@@ -10,7 +10,6 @@ public class TestAnnotation {
         ConfigurableApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         DBConnection db4 = applicationContext.getBean(DBConnection.class);
         db4.openConnection();
-        db4.closeConnection();
         applicationContext.close();
 
     }

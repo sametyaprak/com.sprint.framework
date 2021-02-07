@@ -30,7 +30,8 @@
             </list>
         </property>
     </bean>
-    <bean id="mysqlDatabase" class="inheritanceMerge.Database" parent="database" init-method="testConnection">
+    <bean id="mysqlDatabase" class="inheritanceMerge.Database" parent="database"
+          init-method="testConnection" destroy-method="closeConnection">
         <property name="url" value="mysqlDatabaseUrl"/>
         <property name="properties">
             <list merge="true">

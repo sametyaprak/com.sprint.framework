@@ -22,7 +22,7 @@ public class Test {
         dbConnection.setPassword("passs");
 
         dbConnection.openConnection();
-        dbConnection.closeConnection();
+
     }
 
 }

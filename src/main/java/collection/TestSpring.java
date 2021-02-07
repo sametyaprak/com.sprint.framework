@@ -12,7 +12,7 @@ public class TestSpring {
         ConfigurableApplicationContext configurableApplicationContext = new ClassPathXmlApplicationContext("collection.xml");
         DBConnection db4 = (DBConnection) configurableApplicationContext.getBean("project8");
         db4.openConnection();
-        db4.closeConnection();
+
         configurableApplicationContext.close();
     }
 

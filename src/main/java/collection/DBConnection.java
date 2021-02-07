@@ -42,7 +42,8 @@ public class DBConnection {
 
     }
 
-    public void closeConnection() {
+    @SuppressWarnings("unused")
+    private void closeConnection() {
         System.out.println("close connection");
     }
 
