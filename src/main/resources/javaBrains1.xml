@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+    <bean id="triangle" class="javaBrains1.Triangle">
+        <!--<property name="type" value="myFirstType"/>-->
+        <constructor-arg value="meSecondType"/>
+        <constructor-arg type="int" value="25"/>
+        <!-- xml veriable degerlerine bakmaz, sirasına bakar-->
+        <!-- type yazarak karmasadan kurtulabilirsin-->
+        <!-- index yazarak verileri siralayabilirsin-->
+    </bean>
+        <!--  idref dite birsey var...-->
+    <bean id="triangle2" class="javaBrains1.Triangle2">
+        <property name="a" ref="a"/>
+        <property name="b" ref="b"/>
+            <property name="c">
+                <bean class="javaBrains1.Point">
+                    <property name="x" value="100"/>
+                    <property name="y" value="200"/>
+                </bean>
+            </property>
+    </bean>
+
+    <bean id="a" class="javaBrains1.Point">
+        <property name="x" value="1"/>
+        <property name="y" value="2"/>
+    </bean>
+    <bean id="b" class="javaBrains1.Point">
+        <property name="x" value="10"/>
+        <property name="y" value="20"/>
+    </bean>
+    <alias name="triangle2" alias="triangle-alias"/>
+    <!-- alias ile id.sini aldigin bean.e baska bir isim verip kullanabilirsin-->
+
+
+
+</beans>
